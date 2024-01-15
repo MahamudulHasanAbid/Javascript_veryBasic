@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+
+    <script>
+        const alphabet=['a','b','c','d','e','f'];
+        document.getElementById("demo").innerHTML +=alphabet +"<br>";
+        alphabet[1]= 'B';
+        document.getElementById("demo").innerHTML += alphabet + "<br>";
+        document.getElementById("demo").innerHTML += alphabet[4]+"<br>";
+        document.getElementById("demo").innerHTML += alphabet[alphabet.length-1]+"<br>";
+        
+        let size = alphabet.length;
+        document.getElementById("demo").innerHTML += size+"<br>"
+
+        
+    </script>
+</body>
+</html>

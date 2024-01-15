@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+
+    <script>
+        const clas=[8,9,10,11,12]
+        let size = clas.length;
+        document.getElementById('demo').innerHTML +=size +"<br>";
+        document.getElementById('demo').innerHTML +=clas +"<br>";
+
+        let str= clas.toString();
+        document.getElementById('demo').innerHTML += str+"<br>"
+        document.getElementById('demo').innerHTML += clas.join(">") + "<br>"; //Same as toString() But we can choose the separator except comma.
+        let add_atLast=clas.push(6);
+        document.getElementById("demo").innerHTML += clas+"<br>";
+        let del_atLast = clas.pop();
+        document.getElementById("demo").innerHTML += clas+"<br>";
+        //push() and pop() for the last element of the array.
+        // shift() and unshift() for the first element of the array.
+        let add_atFirst = clas.unshift(6,7);
+        document.getElementById("demo").innerHTML += clas+"<br>";
+        let del_atFirst = clas.shift();
+        document.getElementById("demo").innerHTML += clas+"<br>";
+
+        // A magic method to add elements and remove elements is splice()
+        let add_atAnypos= clas.splice(2,1,"8boost","9boost", 9);//first 2 is for starting place for entry. second 1 is for delete how many elements do I want, rests are for the value to enter. If we add nothing then it will remove with the first and second value of splice() which are 2,1
+        document.getElementById("demo").innerHTML += clas+"<br>";
+        //We can use tospliced() where It does not alter the array like splice() but create a new array.
+        let add_atAnyposition= clas.toSpliced(2,0,"8boost","9boost");
+        document.getElementById('demo').innerHTML += clas+"<br>";
+    </script>
+</body>
+</html>
