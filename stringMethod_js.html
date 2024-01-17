@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fname=prompt("Enter first name: ");
+        let lname=prompt("Enter last name: ");
+
+        let fullname=fname+" "+lname;
+        // let fullname=fname.concat(lname);
+        document.write(fullname+"<br>");
+        let len=fullname.length;
+        document.write("Length of full name is: "+len+"<br>");
+        let up=fullname.toUpperCase();
+        document.write("After changing fullname: " + up + "<br>");
+        document.write(up.toLowerCase());
+        // Some other string method: slice(), charAt() etc.
+    </script>
+</body>
+</html>
