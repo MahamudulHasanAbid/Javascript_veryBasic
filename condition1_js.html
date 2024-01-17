@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const mark=parseFloat(prompt("Enter your mark here: ") +"<br>");
+        if (mark<= 0)
+            document.write("Zero and negative number is not gonna allowed.");
+        else if(mark>100)
+            document.write("Wrong input.");
+        else if(mark>=80)
+            document.write("A+"+"<br>");
+        else if(mark>=70)
+            document.write("A"+"<br>");
+        else if(mark>=65)
+            document.write("A-"+"<br>");
+        else if(mark>=60)
+            document.write("B"+"<br>");
+        else if(mark>=55)
+            document.write("B-"+"<br>");
+        else if(mark>=50)
+            document.write("C"+"<br>");
+        else 
+            document.write("fail");
+
+    </script>
+</body>
+</html>
