@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <script>
+        const car = ["Toyota", "Nissan", "Volvo", "Ford", "BMW"];
+        let i, len, text;
+        for (i = 0, len = car.length, text = " "; i < len; i++ ) {
+            text = text + car[i] + "<br>";
+        }
+
+        document.getElementById("demo").innerHTML +=  text;
+    
+    // "For in" loop
+
+    const person ={fname:"MD", lname:"Abdullah", age:6};
+
+    let info = " ";
+    for(let i in person)
+    {
+        info += person[i]+ " ";
+    }
+    document.getElementById("demo1").innerHTML += info + "<br>";
+
+    // "forEach() method"
+    const arr=[3,5,9,23, 13, 14, 19 ];
+    let num=" ";
+    arr.forEach(fun);
+    document.getElementById("demo1").innerHTML += num + "<br>";
+
+    function fun(value, index, array)
+    {
+        num += value + " ";
+    }
+
+    // "for of" loop
+
+    const fruits=["Apple", "Banana", "Mango"];
+    let show = "";
+    for(let i of fruits)
+    {
+        show += i + " ";
+    }
+
+    document.getElementById("demo1").innerHTML += show + "<br>";
+    </script>
+</body>
+
+</html>

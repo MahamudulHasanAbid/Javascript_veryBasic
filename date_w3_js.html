@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+
+    <script>
+        const dates= new Date();
+        d=dates.toUTCString();
+        document.getElementById("demo").innerHTML += d +"<br>";
+
+        // const month=["Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"];
+
+        const da= new Date("2024-02-10");
+        // let mo = month[da.getMonth()];
+        let mo = da.getMonth() + 1;
+
+        document.getElementById("demo").innerHTML += mo  +"<br>";
+
+
+    </script>
+</body>
+</html>
