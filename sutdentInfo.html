@@ -1,0 +1,96 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="practicing JS">
+    <title>practice</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+
+    <script>
+
+        const students = [
+            {
+                name: 'Alice',
+                roll: 9330,
+                home: 'florida',
+                semester1: { math: 90, science: 85 },
+                semester2: { math: 95, science: 77 },
+                semester3: { math: 92, science: 90 },
+            },
+            {
+                name: 'Bob',
+                roll: 9001,
+                home: 'florida',
+                semester1: { math: 88, science: 79 },
+                semester2: { math: 91, science: 86 },
+                semester3: { math: 90, science: 87 },
+            },
+            {
+                name: 'Charlie',
+                roll: 9101,
+                home: 'New york',
+                semester1: { math: 85, science: 90 },
+                semester2: { math: 69, science: 88 },
+                semester3: { math: 94, science: 92 },
+            }
+        ];
+
+        // document.getElementById(demo).innerHTML += students;
+        // Accessing specific information
+        console.log("Students names: ");
+        for (let i = 0; i < students.length; i++) {
+            console.log(students[i].name);
+        }
+
+        console.log("Students who live in florida: ");
+        for (let i = 0; i < students.length; i++) {
+            if (students[i].home.toLowerCase() === 'florida') {
+                console.log(students[i].name);
+            }
+        }
+
+        // Average grade for a Semesters.
+
+        let totalMathGrades1 = 0;
+        let totalMathGrades2 = 0;
+        let totalMathGrades3 = 0;
+        for(let std of students){
+            totalMathGrades1 += std.semester1.math;
+            totalMathGrades2 += std.semester2.math;
+            totalMathGrades3 += std.semester3.math;
+        }
+        const averageMathGrades1 = totalMathGrades1/ students.length;
+        const averageMathGrades2 = totalMathGrades2/ students.length;
+        const averageMathGrades3 = totalMathGrades3/ students.length;
+
+
+        console.log("Total math grade of semester 1 is : ", totalMathGrades1);
+        console.log("Average math grade of semester 1 is : ", averageMathGrades1);
+
+        console.log("Total math grade of semester 2 is : ", totalMathGrades2);
+        console.log("Average math grade of semester 2 is : ", averageMathGrades2);
+
+        console.log("Total math grade of semester 3 is : ", totalMathGrades3);
+        console.log("Average math grade of semester 3 is : ", averageMathGrades3);
+
+        // Student with heighest grade in math in 1 semester.
+        let heighestmathgrade = 0;
+        let studenthighestgrade;
+        for(let std of students){
+            if(std.semester1.math>heighestmathgrade){
+                heighestmathgrade = std.semester1.math;
+                studenthighestgrade = std.name;
+            }
+        }
+        console.log("Student with heighest math grade for semester 1 is : ", studenthighestgrade);
+        const greet = "Congratulation, " + studenthighestgrade + "!";
+        console.log(greet);
+
+    </script>
+</body>
+
+</html>
