@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="E-commerce webpage with event listeners">
+    <title>E-commerce Webpage</title>
+    <style>
+        /* Add some basic styling for the product cards and buttons */
+        #product-list{
+            width: 100vw;
+            display: flex;
+            flex-wrap: wrap;
+            /* height: 100vh; */
+        }
+        .product-card {
+            background-color: blueviolet;
+            color: white;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 10px;
+            width: 200px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        #shopping-cart{
+            background: linear-gradient(30deg,rgb(255, 138, 138),rgb(128, 128, 248));
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to our E-commerce Store</h1>
+    <section id="sec1">
+        <div id="product-list">
+            <!-- Product cards -->
+            <div class="product-card">
+                <h2>Product 1</h2>
+                <p>$10</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <h2>Product 2</h2>
+                <p>$20</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <h2>Product 3</h2>
+                <p>$30</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping cart -->
+    <section>
+        <div id="shopping-cart">
+            <h2>Shopping Cart</h2>
+            <ul id="cart-items">
+                <!-- Cart items will be displayed here -->
+            </ul>
+        </div>
+    </section>
+
+    <script>
+        // Function to add a product to the shopping cart
+        function addToCart(event) {
+            // Get the product details from the clicked button's parent element (product card)
+            var product = event.target.parentElement;
+            var productName = product.querySelector('h2').textContent;
+            var productPrice = product.querySelector('p').textContent;
+
+            // Create a new list item for the shopping cart
+            var listItem = document.createElement('li');
+            listItem.textContent = productName + ' - ' + productPrice;
+
+            // Append the list item to the shopping cart
+            document.getElementById('cart-items').appendChild(listItem); 
+        }
+
+        // Get all buttons with class 'add-to-cart'
+        var addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+        // Loop through each button and add an event listener
+        addToCartButtons.forEach(function(button) {
+            button.addEventListener('click', addToCart);
+        });
+       
+    </script>
+</body>
+
+</html>
